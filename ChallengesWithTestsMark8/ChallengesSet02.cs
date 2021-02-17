@@ -154,7 +154,7 @@ namespace ChallengesWithTestsMark8
             }
             if (number > 5)
             {
-               var oddNumbers = (number / 3 + 1);
+               var oddNumbers = (number / 2);
                 return oddNumbers;
                                               
             }
