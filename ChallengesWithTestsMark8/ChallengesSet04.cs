@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 namespace ChallengesWithTestsMark8
@@ -16,7 +18,10 @@ namespace ChallengesWithTestsMark8
 
         public int GetLengthOfShortestString(string str1, string str2, string str3, string str4)
         {
-            throw new NotImplementedException();
+            var words = new List<string>();
+            words.Add(str1); words.Add(str2); words.Add(str3); words.Add(str4);
+            return words.Min(x => x.Length);
+         
         }
 
         public int GetSmallestNumber(int number1, int number2, int number3, int number4)
