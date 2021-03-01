@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace ChallengesWithTestsMark8
 {
@@ -6,7 +7,11 @@ namespace ChallengesWithTestsMark8
     {
         public int AddEvenSubtractOdd(int[] numbers)
         {
-            throw new NotImplementedException();
+            var evens = numbers.Where(x => x % 2 == 0 || x % -2 == 0);
+            var odds = numbers.Where(x => x % 2 != 0 || x % -2 != 0);            
+            var result = (evens.Sum()) - (odds.Sum());
+
+            return result;
         }
 
         public int GetLengthOfShortestString(string str1, string str2, string str3, string str4)
