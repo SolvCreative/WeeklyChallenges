@@ -12,7 +12,6 @@ namespace ChallengesWithTestsMark8
             var evens = numbers.Where(x => x % 2 == 0 || x % -2 == 0);
             var odds = numbers.Where(x => x % 2 != 0 || x % -2 != 0);            
             var result = (evens.Sum()) - (odds.Sum());
-
             return result;
         }
 
@@ -20,13 +19,14 @@ namespace ChallengesWithTestsMark8
         {
             var words = new List<string>();
             words.Add(str1); words.Add(str2); words.Add(str3); words.Add(str4);
-            return words.Min(x => x.Length);
-         
+            return words.Min(x => x.Length);         
         }
 
         public int GetSmallestNumber(int number1, int number2, int number3, int number4)
         {
-            throw new NotImplementedException();
+            var numbers = new List<int>();
+            numbers.Add(number1); numbers.Add(number2); numbers.Add(number3); numbers.Add(number4);
+            return numbers.Min();
         }
 
         public void ChangeBusinessNameTo_TrueCoders(Business biz)
