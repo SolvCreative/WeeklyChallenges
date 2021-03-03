@@ -31,32 +31,75 @@ namespace ChallengesWithTestsMark8
 
         public void ChangeBusinessNameTo_TrueCoders(Business biz)
         {
-            throw new NotImplementedException();
+            biz.Name = "TrueCoders";                                
         }
 
         public bool CouldFormTriangle(int sideLength1, int sideLength2, int sideLength3)
         {
-            throw new NotImplementedException();
+            return (
+                sideLength1 + sideLength2 > sideLength3 &&
+                    sideLength1 + sideLength3 > sideLength2 &&
+                    sideLength2 + sideLength3 > sideLength1
+            );
         }
 
         public bool IsStringANumber(string input)
         {
-            throw new NotImplementedException();
+            var isNumber = double.TryParse(input, out double number);
+            return isNumber;
         }
 
         public bool MajorityOfElementsInArrayAreNull(object[] objs)
         {
-            throw new NotImplementedException();
+            var amount = objs.Length;
+            var majority = (amount / 2) + 1;
+            var count = 0;
+
+            foreach (var obj in objs)
+            {
+                if (obj == null)
+                {
+                    count++;
+                }
+            }
+            if (count >= majority)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
 
         public double AverageEvens(int[] numbers)
         {
-            throw new NotImplementedException();
-        }
 
+            if (numbers == null || numbers.Length == 0)
+            {
+                return 0;
+            }
+
+            var n = numbers.Where(num => num % 2 == 0);
+            if (n.Count() == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return n.Average();
+            }
+
+        }
         public int Factorial(int number)
-        {
-            throw new NotImplementedException();
+        {            
+            if (number == 0)
+            {
+                return 1;
+            }
+            return number * Factorial(number - 1);
+            
         }
     }
 }
